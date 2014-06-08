@@ -22,9 +22,9 @@ Build Instructions
 1. Install the required Javascript dependencies to your local environment: `bower install`
 2. Install the required Node.js dependencies to your local environment: `node install`
 3. Open up `app/scripts/app.js` and fill in the following values:
-  .constant('SUCCESS_ALBUM_ID', '<<INSERT IMGUR SUCCESS ALBUM ID HERE>>')
-  .constant('FAILURE_ALBUM_ID', '<<INSERT IMGURE FAILURE ALBUM ID HERE>>')
-  .constant('IMGUR_CLIENT_ID', '<<INSERT YOUR OWN IMGUR API CLIENT ID HERE>>')
+  .constant('SUCCESS_ALBUM_ID', '[[INSERT IMGUR SUCCESS ALBUM ID HERE]]')
+  .constant('FAILURE_ALBUM_ID', '[[INSERT IMGURE FAILURE ALBUM ID HERE]]')
+  .constant('IMGUR_CLIENT_ID', '[[INSERT YOUR OWN IMGUR API CLIENT ID HERE]]')
 (Note that an imgur album ID is the suffix of the album's URL.  For example, the album at http://imgur.com/a/JIARx has an ID of `JIARx`.)
 4. Start the server locally: `grunt serve`
 
