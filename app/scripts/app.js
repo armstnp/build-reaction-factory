@@ -9,7 +9,7 @@ var app = angular.module('buildReactionFactoryApp', [
 app.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'partials/main',
         controller: 'MainCtrl'
       })
       .otherwise({
