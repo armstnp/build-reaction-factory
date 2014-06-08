@@ -18,8 +18,8 @@ app.config(function ($routeProvider) {
   })
   //Inject here.
   //TODO: figure out proper environment injection for the app!
-  .constant('SUCCESS_ALBUM_ID', '')
-  .constant('FAILURE_ALBUM_ID', '')
+  .constant('SUCCESS_ALBUM_ID', 'rHuts')
+  .constant('FAILURE_ALBUM_ID', 'JIARx')
   .constant('IMGUR_CLIENT_ID', '')
   .constant('SUCCESS_REACTIONS', [
 	'Nice build!',
@@ -30,8 +30,8 @@ app.config(function ($routeProvider) {
   ])
   .constant('FAILURE_REACTIONS', [
 	':(',
-	"That's too bad...",
+	'That\'s too bad...',
 	'you tried',
 	'There, there; you can always push a fix.',
-	"Yikes, didn't expect that!"
+	'Yikes, didn\'t expect that!'
   ]);
