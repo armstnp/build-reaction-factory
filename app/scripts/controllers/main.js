@@ -22,24 +22,27 @@ app.controller('MainCtrl', function ($scope, Imgur, SUCCESS_REACTIONS, FAILURE_R
 		return arr[Math.floor(Math.random() * arr.length)];
 	};
 
+	var generateReactionFrom = function(reactions){
+		resetReaction();
+		setLoadingOn();
+		Imgur.getAlbum(reactions.albumId).success(setImageUrl(reactions)).then(setLoadingOff);
+	};
+
     var setImageUrl = function(reactions){
 		return function(returnObject){
 			var album = returnObject.data;
 			var image = getRandomFromArray(album.images);
+			var reactionText = getRandomFromArray(reactions.phrases);
 			$scope.imageUrl = image.link;
-			$scope.messageText = "Build Reaction Bot says: " + getRandomFromArray(reactions) + " " + $scope.imageUrl;
+			$scope.messageText = 'Build Reaction Bot says: ' + reactionText + ' ' + image.link;
 		};
 	};
 
     $scope.getSuccess = function(){
-		resetReaction();
-		setLoadingOn();
-    	Imgur.getRandomSuccess().success(setImageUrl(SUCCESS_REACTIONS)).then(setLoadingOff);
+		generateReactionFrom(SUCCESS_REACTIONS);
     };
 
     $scope.getFailure = function(){
-		resetReaction();
-		setLoadingOn();
-    	Imgur.getRandomFailure().success(setImageUrl(FAILURE_REACTIONS)).then(setLoadingOff);
+		generateReactionFrom(FAILURE_REACTIONS);
     };
 });
