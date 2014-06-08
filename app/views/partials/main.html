@@ -22,8 +22,10 @@
   </div>
   <div ng-show="imageUrl">
     <div><img ng-src="{{imageUrl}}" /></div><br />
-	<p>{{messageText}}</p>
-    <div><input id="image-url-display" type="text" ng-model="messageText" readonly/></div>
+    <div>
+      <input class="form-control text-center" id="image-url-display" type="text" ng-model="messageText" readonly/>
+      <span class="help-block">Click to select the text for easy copying</span>
+    </div>
   </div>
 
   <script type="text/javascript">
