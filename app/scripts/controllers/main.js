@@ -1,9 +1,12 @@
 'use strict';
 
-app.controller('MainCtrl', function ($scope, Imgur, SUCCESS_REACTIONS, FAILURE_REACTIONS) {
-    $scope.imageUrl = null;
+app.controller('MainCtrl', function ($scope, Imgur, SUCCESS_REACTIONS, FAILURE_REACTIONS, INITIAL_BOT_NAME) {
+	$scope.botName = INITIAL_BOT_NAME;
 	$scope.messageText = null;
+    $scope.imageUrl = null;
 	$scope.isLoading = false;
+
+	$scope.fullMessage = null;
 	
 	var resetReaction = function(){
 		$scope.imageUrl = null;
@@ -32,10 +35,14 @@ app.controller('MainCtrl', function ($scope, Imgur, SUCCESS_REACTIONS, FAILURE_R
 		return function(returnObject){
 			var album = returnObject.data;
 			var image = getRandomFromArray(album.images);
-			var reactionText = getRandomFromArray(reactions.phrases);
 			$scope.imageUrl = image.link;
-			$scope.messageText = 'Build Reaction Bot says: ' + reactionText + ' ' + image.link;
+			$scope.messageText = getRandomFromArray(reactions.phrases);
+			$scope.calcMessage();
 		};
+	};
+
+	$scope.calcMessage = function(){
+		$scope.fullMessage = $scope.botName + ' says: ' + $scope.messageText + ' ' + $scope.imageUrl;
 	};
 
     $scope.getSuccess = function(){

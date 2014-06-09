@@ -38,4 +38,5 @@ app.config(function ($routeProvider) {
       'Yikes, didn\'t expect that!'
     ]
   })
+  .constant('INITIAL_BOT_NAME', 'Build Reaction Bot')
   .constant('IMGUR_CLIENT_ID', '');
