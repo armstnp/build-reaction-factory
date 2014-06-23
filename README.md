@@ -24,8 +24,16 @@ Build Instructions
 3. Open up `app/scripts/app.js` and fill in the following values:
 
     ```
-    .constant('SUCCESS_ALBUM_ID', '[[INSERT IMGUR SUCCESS ALBUM ID HERE]]')
-    .constant('FAILURE_ALBUM_ID', '[[INSERT IMGURE FAILURE ALBUM ID HERE]]')
+    .constant('SUCCESS_ALBUM_ID', {
+        albumId: '[[INSERT IMGUR SUCCESS ALBUM ID HERE]]',
+        ...
+    
+    .constant('FAILURE_ALBUM_ID',
+        albumId: '[[INSERT IMGURE FAILURE ALBUM ID HERE]]',
+        ...
+    
+    .constant('INITIAL_BOT_NAME', '[[INSERT GENERATED BOT NAME HERE]]')
+    
     .constant('IMGUR_CLIENT_ID', '[[INSERT YOUR OWN IMGUR API CLIENT ID HERE]]')
     ```
     
